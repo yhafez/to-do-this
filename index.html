@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>To Do App</title>
+
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Tomorrow|Noto+Sans&display=swap" rel="stylesheet">
+
+        <!-- jQuery and jQuery-ui -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+        <!-- sync with CSS and JS -->
+        <link rel="stylesheet" href="style.css" />
+        <script defer src="app.js"></script>
+
+</head>
+
+
+
+<body>
+    
+    <div id="app">
+        <header>
+          <span>TODO.APP</span>
+        </header>
+        <aside class="left-drawer">
+          <button class="action add-todo">
+            <i class="material-icons">add_circle</i>
+            <span class="action-text">Create New Todo</span>
+          </button>
+          <button class="action remove-completed">
+            <i class="material-icons">check_circle</i>
+            <span class="action-text">Remove Completed Todos</span>
+          </button>
+          <button class="action remove-expired">
+            <i class="material-icons">delete_sweep</i>
+            <span class="action-text">Remove Expired Todos</span>
+          </button>
+        </aside>
+        <main>
+          <section class="todo-list">
+            <h3 class="list-title" id="pending-todos">Pending Todos</h3>
+            <div class="content pending-todos"></div>
+          </section>
+          <section class="todo-list">
+            <h3 class="list-title" id="completed-todos">Completed Todos</h3>
+            <div class="content completed-todos"></div>
+          </section>
+          <section class="todo-list">    
+            <h3 class="list-title">Expired Todos</h3>
+            <div class="content expired-todos"></div>
+          </section>
+        </main>
+        <div class="modal">
+          <div class="content">
+            <h3>Create New Todo</h3>
+            <form class="todo-form" action="" method="">
+              <label for="todo-title">Todo Title</label>
+              <input type="text" id="todo-title" required>
+              <h5>This is a required field</h5>
+              <div class=due-date-area>
+                <label for="custom">Due Date</label>
+                <div class="due-date">
+                  <button class ="date-buttons" id="custom">Custom</button>
+                  <button class ="date-buttons" id="today">Today</button>
+                  <button class ="date-buttons" id="tomorrow">Tomorrow</button>
+                  <button class ="date-buttons" id="1-week">1 Week</button>
+                  <button class ="date-buttons" id="1-month">1 Month</button>
+                  <!--<input type="date" id="todo-due-date" required>-->
+                </div>
+              </div>
+              <input type="date" id="todo-due-date" required></input>
+              <h5>This is a required field</h5>
+              <label for="todo-description">Description</label>
+              <textarea id="todo-description" columns="40" rows="5"></textarea>
+              <div class="actions">
+                <button class="action create-todo when-valid">
+                  <i class="material-icons">add_circle</i>
+                  <span class="action-text">Create</span>
+                </button>
+                <button disabled class="action create-todo when-invalid">
+                  <i class="material-icons">add_circle</i>
+                  <span class="action-text">Create</span>
+                </button>
+                <button class="action cancel-create-todo">
+                  <i class="material-icons">cancel</i>
+                  <span class="action-text">Cancel</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+</body>
+
+
+
+</html>
